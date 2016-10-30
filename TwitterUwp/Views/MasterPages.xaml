@@ -1,0 +1,48 @@
+﻿<Page
+    x:Class="TwitterUwp.Views.MasterPages"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TwitterUwp.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    NavigationCacheMode="Required">
+    <Page.Transitions>
+        <TransitionCollection>
+            <NavigationThemeTransition></NavigationThemeTransition>
+        </TransitionCollection>
+    </Page.Transitions>
+
+    <Grid x:Name="LayoutRoot" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="AdaptiveStates" CurrentStateChanged="AdaptiveStates_CurrentStateChanged">
+                <VisualState x:Name="DefaultState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="720"></AdaptiveTrigger>
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:Name="NarrowState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0"></AdaptiveTrigger>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="MasterColumn.Width" Value="*"></Setter>
+                        <Setter Target="DetailColumn.Width" Value="0"></Setter>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition x:Name="MasterColumn" Width="600"></ColumnDefinition>
+            <ColumnDefinition x:Name="DetailColumn" Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Frame x:Name="MasterFrame"></Frame>
+
+        <ProgressBar x:Name="LoadingProgressBar" Visibility="Collapsed" Grid.Column="1" Margin="24,8" IsIndeterminate="True"></ProgressBar>
+
+        <Frame x:Name="DetailFrame" Grid.Column="1" Visibility="Collapsed"></Frame>
+        
+    </Grid>
+</Page>

@@ -1,0 +1,31 @@
+﻿<Page
+    x:Class="TwitterUwp.Views.HomeDetail"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TwitterUwp.Views"
+    xmlns:models="using:TwitterUwp.Model"
+    xmlns:control="using:TwitterUwp.Control"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:behaviors="using:Microsoft.Toolkit.Uwp.UI.Animations.Behaviors"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <!--<control:NavMenuListView x:Name="lstHomeDetail">
+            <interactivity:Interaction.Behaviors>
+                <behaviors:FadeHeaderBehavior />
+            </interactivity:Interaction.Behaviors>
+            <control:NavMenuListView.Header>
+                <Grid>
+                    
+                </Grid>
+            </control:NavMenuListView.Header>
+            <control:NavMenuListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid></Grid>
+                </DataTemplate>
+            </control:NavMenuListView.ItemTemplate>
+        </control:NavMenuListView>-->
+    </Grid>
+</Page>
